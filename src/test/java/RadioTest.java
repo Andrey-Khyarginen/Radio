@@ -4,6 +4,13 @@ import org.junit.jupiter.api.Test;
 public class RadioTest {
 
     @Test
+    public void test(){
+        Radio radio = new Radio(10);
+        Assertions.assertEquals(0, radio.getMinChanel());
+        Assertions.assertEquals(9, radio.getMaxChanel());
+        Assertions.assertEquals(0, radio.getCurrentChanel());
+
+    @Test
     public void shouldSetChanel() {
         Radio radio = new Radio();
         radio.setCurrentChanel(5);
@@ -152,5 +159,7 @@ public class RadioTest {
         int expected = 3;
         int actual = radio.getCurrentVolume();
         Assertions.assertEquals(expected, actual);
+    }
+
     }
 }

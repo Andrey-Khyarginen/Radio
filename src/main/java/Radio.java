@@ -1,10 +1,28 @@
 public class Radio {
     private int minChanel = 0;
     private int maxChanel = 9;
-    private int currentChanel;
+    private int currentChanel = minChanel;
+
+    public Radio(int minChanel, int maxChanel) {
+        this.minChanel = minChanel;
+        this.maxChanel = maxChanel;
+        this.currentChanel = minChanel;
+    }
+
+    public Radio(int size){
+        maxChanel = minChanel +size;
+    }
 
     public int getCurrentChanel() {
         return currentChanel;
+    }
+
+    public int getMinChanel() {
+        return minChanel;
+    }
+
+    public int getMaxChanel() {
+        return maxChanel;
     }
 
     public void setCurrentChanel(int newCurrentChanel) {
@@ -21,6 +39,7 @@ public class Radio {
     public void setMaxChanel() {
         currentChanel = maxChanel;
     }
+
     public void setMinChanel() {
         currentChanel = minChanel;
     }
@@ -29,7 +48,7 @@ public class Radio {
         if (currentChanel < maxChanel) {
             currentChanel = currentChanel + 1;
         }
-        if (currentChanel + 1 > maxChanel){
+        if (currentChanel + 1 > maxChanel) {
             currentChanel = 0;
         }
     }
@@ -38,20 +57,28 @@ public class Radio {
         if (currentChanel > minChanel) {
             currentChanel = currentChanel - 1;
         }
-        if (currentChanel - 1 < minChanel){
+        if (currentChanel - 1 < minChanel) {
             currentChanel = maxChanel;
         }
     }
 
     ///////////////////////звук
-   private int minVolume = 0;
+    private int minVolume = 0;
     private int maxVolume = 100;
     private int currentVolume;
 
     public int getCurrentVolume() {
-
         return currentVolume;
     }
+
+    public int getMaxVolume() {
+        return maxVolume;
+    }
+
+    public int getMinVolume() {
+        return minVolume;
+    }
+
     public void setCurrentVolume(int newCurrentVolume) {
 
         if (newCurrentVolume < minVolume) {
@@ -62,9 +89,11 @@ public class Radio {
         }
         currentVolume = newCurrentVolume;
     }
+
     public void setMaxVolume() {
         currentVolume = maxVolume;
     }
+
     public void setMinVolume() {
         currentVolume = minVolume;
     }
