@@ -21,6 +21,7 @@ public class Radio {
     public void setMaxChanel() {
         currentChanel = 9;
     }
+
     public void setMinChanel() {
         currentChanel = 0;
     }
@@ -28,8 +29,8 @@ public class Radio {
     public void increaseChanel() {
         if (currentChanel < 9) {
             currentChanel = currentChanel + 1;
-        }
-        if (currentChanel + 1 > 9){
+        } else {
+
             currentChanel = 0;
         }
     }
@@ -37,14 +38,13 @@ public class Radio {
     public void reduceChanel() {
         if (currentChanel > 0) {
             currentChanel = currentChanel - 1;
-        }
-        if (currentChanel - 1 < 0){
+        } else {
             currentChanel = 9;
         }
     }
 
     ///////////////////////звук
-   private int minVolume = 0;
+    private int minVolume = 0;
     private int maxVolume = 10;
     private int currentVolume;
 
@@ -52,6 +52,7 @@ public class Radio {
 
         return currentVolume;
     }
+
     public void setCurrentVolume(int newCurrentVolume) {
 
         if (newCurrentVolume < 0) {
@@ -62,9 +63,11 @@ public class Radio {
         }
         currentVolume = newCurrentVolume;
     }
+
     public void setMaxVolume() {
         currentVolume = 10;
     }
+
     public void setMinVolume() {
         currentVolume = 0;
     }

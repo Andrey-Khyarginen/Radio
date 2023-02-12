@@ -87,6 +87,24 @@ public class RadioTest {
         int actual = radio.getCurrentChanel();
         Assertions.assertEquals(expected, actual);
     }
+    @Test
+    public void sholdIncreaseChanel2() {
+        Radio radio = new Radio();
+        radio.setCurrentChanel(8);
+        radio.increaseChanel();
+        int expected = 9;
+        int actual = radio.getCurrentChanel();
+        Assertions.assertEquals(expected, actual);
+    }
+    @Test
+    public void sholdReduceChanel2() {
+        Radio radio = new Radio();
+        radio.setCurrentChanel(1);
+        radio.reduceChanel();
+        int expected = 0;
+        int actual = radio.getCurrentChanel();
+        Assertions.assertEquals(expected, actual);
+    }
 
     ///////////////////////////звук
     @Test
