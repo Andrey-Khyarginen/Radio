@@ -4,12 +4,28 @@ import org.junit.jupiter.api.Test;
 public class RadioTest {
 
     @Test
-    public void test(){
+    public void test() {
         Radio radio = new Radio(10);
         Assertions.assertEquals(0, radio.getMinChanel());
         Assertions.assertEquals(9, radio.getMaxChanel());
         Assertions.assertEquals(0, radio.getCurrentChanel());
-
+    }
+    @Test
+    public void shouldSetChanel2() {
+        Radio radio = new Radio(15);
+        radio.setCurrentChanel(14);
+        int expected = 14;
+        int actual = radio.getCurrentChanel();
+        Assertions.assertEquals(expected, actual);
+    }
+    @Test
+    public void shouldSetChanel3() {
+        Radio radio = new Radio(15);
+        radio.setMaxChanel();
+        int expected = 14;
+        int actual = radio.getCurrentChanel();
+        Assertions.assertEquals(expected, actual);
+    }
     @Test
     public void shouldSetChanel() {
         Radio radio = new Radio();
@@ -94,6 +110,25 @@ public class RadioTest {
         int actual = radio.getCurrentChanel();
         Assertions.assertEquals(expected, actual);
     }
+    @Test
+    public void sholdIncreaseChanel2() {
+        Radio radio = new Radio();
+        radio.setCurrentChanel(8);
+        radio.increaseChanel();
+        int expected = 9;
+        int actual = radio.getCurrentChanel();
+        Assertions.assertEquals(expected, actual);
+    }
+
+    @Test
+    public void sholdReduceChanel2() {
+        Radio radio = new Radio();
+        radio.setCurrentChanel(1);
+        radio.reduceChanel();
+        int expected = 0;
+        int actual = radio.getCurrentChanel();
+        Assertions.assertEquals(expected, actual);
+    }
 
     ///////////////////////////звук
     @Test
@@ -162,4 +197,4 @@ public class RadioTest {
     }
 
     }
-}
+
